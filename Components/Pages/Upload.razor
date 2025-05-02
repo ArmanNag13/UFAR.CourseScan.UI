@@ -1,0 +1,180 @@
+﻿@page "/upload"
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+@if (isUploading)
+{
+    <div class="fixed top-0 left-0 w-full h-1 bg-blue-600 animate-pulse z-50"></div>
+}
+
+<div class="upload-page">
+    <h2 class="page-title">Upload Course PDF</h2>
+    <p class="page-subtitle">Select a PDF file to extract and parse course data automatically.</p>
+
+    <div class="upload-layout">
+        <!-- Left Column - File Upload -->
+        <div class="upload-column">
+            <div class="upload-box">
+                <label class="upload-label">Choose PDF File</label>
+                <InputFile OnChange="HandleFileSelected"
+                           accept=".pdf"
+                           class="file-input" />
+
+                @if (selectedFile != null)
+                {
+                    <div class="file-info">
+                        <p><strong>File:</strong> @selectedFile.Name</p>
+                        <p><strong>Size:</strong> @((selectedFile.Size / 1024f / 1024f).ToString("F2")) MB</p>
+                    </div>
+                }
+
+                <button @onclick="UploadFile"
+                        class="upload-btn"
+                        disabled="@(!isFileSelected || isUploading || !isValidFile)">
+                    Upload & Parse
+                </button>
+
+                @if (!string.IsNullOrEmpty(statusMessage))
+                {
+                    <div class="status-message success">
+                        @statusMessage
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Right Column - Parsed Results -->
+        <div class="results-column">
+            @if (isUploadComplete && parsedCourseData != null)
+            {
+                <div class="results-box">
+                    <h3>Parsed Course Data:</h3>
+                    <div class="course-details">
+                        <p><strong>Course Title:</strong> @parsedCourseData.Title</p>
+                        <p><strong>Academic Year:</strong> @parsedCourseData.AcademicYear</p>
+                        <p><strong>Professor:</strong> @(string.IsNullOrEmpty(parsedCourseData.Professor) ? "Not specified" : parsedCourseData.Professor)</p>
+                        <p><strong>Language:</strong> @parsedCourseData.Language</p>
+                    </div>
+                    <a href="/courses" class="view-courses-link">Click here to view all parsed courses</a>
+                </div>
+            }
+            else
+            {
+                <div class="empty-results">
+                    <svg class="pdf-icon" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                        <path d="M14 2v6h6" />
+                    </svg>
+                    <p>Upload a PDF to see parsed results</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    private IBrowserFile selectedFile;
+    private bool isFileSelected = false;
+    private bool isUploading = false;
+    private bool isValidFile = true;
+    private string statusMessage;
+    private string errorMessage;
+
+    // Track if upload is complete and store parsed data
+    private bool isUploadComplete = false;
+    private Course parsedCourseData;
+
+    // Handle file selection
+    private void HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.File;
+        isFileSelected = selectedFile != null;
+
+        // Validate file type (only PDFs allowed)
+        isValidFile = selectedFile?.ContentType == "application/pdf";
+
+        // Validate file size (maximum 20MB)
+        if (isFileSelected && selectedFile.Size > 20 * 1024 * 1024)
+        {
+            errorMessage = "File size exceeds the 20MB limit. Please select a smaller file.";
+            isValidFile = false;
+        }
+        else
+        {
+            errorMessage = string.Empty;
+        }
+    }
+
+    // Upload file and parse data
+    private async Task UploadFile()
+    {
+        if (selectedFile == null || !isValidFile)
+        {
+            errorMessage = "Please select a valid file first.";
+            return;
+        }
+
+        isUploading = true;
+        errorMessage = null;
+        statusMessage = null;
+
+        try
+        {
+            var client = HttpClientFactory.CreateClient("PDFClient");
+            var content = new MultipartFormDataContent();
+            var fileStream = selectedFile.OpenReadStream(maxAllowedSize: 20 * 1024 * 1024);
+            var streamContent = new StreamContent(fileStream);
+            streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/pdf");
+
+            content.Add(streamContent, "pdfFile", selectedFile.Name);
+
+            var response = await client.PostAsync("/upload-course", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                statusMessage = "Upload and parsing successful!";
+                // Simulate parsed course data
+                parsedCourseData = await response.Content.ReadFromJsonAsync<Course>();
+                if (parsedCourseData == null)
+                {
+                    errorMessage = "No course data found in the PDF.";
+                }
+                isUploadComplete = true;
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                errorMessage = $"Upload failed: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred: {ex.Message}";
+        }
+        finally
+        {
+            isUploading = false;
+        }
+    }
+
+    // Navigate to the courses page
+    private void NavigateToCoursesPage()
+    {
+        NavigationManager.NavigateTo("/courses");  // Use injected NavigationManager for navigation
+    }
+
+    // Define the Course model for parsed data
+    public class Course
+    {
+        public string Title { get; set; }
+        public string AcademicYear { get; set; }
+        public string Professor { get; set; }
+        public string Language { get; set; }
+        // Add more properties as needed
+    }
+}
+
+

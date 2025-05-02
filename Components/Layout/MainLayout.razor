@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page-background"> <!-- This will apply the background image to the whole layout -->
+    <!-- Topbar -->
+    <div class="topbar bg-blue-600 text-white shadow-md relative px-4 py-2 flex items-center justify-between">
+        <div class="flex-shrink-0">
+            <img src="images/logo.png" alt="UFAR Logo" style="height: 188px; width: auto;" />
+        </div>
+        <!-- Title in the center -->
+        <div class="mx-auto text-center absolute left-1/2 transform -translate-x-1/2">
+            <h1 class="text-2xl font-bold"></h1>
+        </div>
+
+        <!-- Sidebar buttons (top right) -->
+        <div class="ml-auto space-x-4">
+            <NavLink class="sidebar-button" href="/">Home</NavLink>
+            <NavLink class="sidebar-button" href="/upload">Upload PDF</NavLink>
+            <NavLink class="sidebar-button" href="/courses">Courses</NavLink>
+            <NavLink class="sidebar-button" href="/ai">AI</NavLink>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="content">
+        <article class="px-4 py-6">
+            @Body
+        </article>
+    </main>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+</div>

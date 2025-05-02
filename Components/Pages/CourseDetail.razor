@@ -1,0 +1,189 @@
+﻿@page "/course-detail/{CourseId:int}"
+@using Microsoft.EntityFrameworkCore
+@using UFAR.PDFSync.DAO
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject ApplicationDbContext DbContext // Inject the ApplicationDbContext
+
+<div class="container">
+    @if (course == null)
+    {
+        <div class="text-center my-4">
+            <p>Loading course details...</p>
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- Outer Fixed Container -->
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title text-primary">@course.Title</h5>
+                <p class="mb-1"><strong>Professor:</strong> @course.Professor</p>
+                <p class="mb-2 text-muted">
+                    <i class="fas fa-calendar-alt me-1"></i>@course.AcademicYear |
+                    <i class="fas fa-graduation-cap ms-2 me-1"></i>@course.Degree
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-secondary">@course.Language</span>
+                    <span class="badge bg-success">@course.ECTS ECTS</span>
+                    <span class="badge bg-info text-dark">@course.HoursCM h CM</span>
+                    <span class="badge bg-warning text-dark">@course.HoursTD h TD</span>
+                    <span class="badge bg-danger">@course.HoursTP h TP</span>
+                </div>
+
+                <!-- Scrollable Content Section -->
+                <div class="course-details-container mt-4 position-relative" style="max-height: 70vh; overflow-y: auto; background-color: rgba(255, 255, 255, 0.85);">
+                    <!-- Top-right Back Button -->
+                    <button class="btn btn-outline-secondary" @onclick="NavigateBack"
+                            style="position: absolute; top: 10px; right: 10px; z-index: 100;">
+                        <i class="fas fa-arrow-left me-2"></i> Back to Course Catalog
+                    </button>
+
+                    <!-- Learning Outcomes Section -->
+                    @if (course.LearningOutcomes?.Any() == true)
+                    {
+                        <h6 class="text-primary mt-4"><i class="fas fa-lightbulb me-1"></i>Learning Outcomes</h6>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var lo in course.LearningOutcomes)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@lo.Code:</strong> @lo.Description (Category: @lo.Category)
+                                </li>
+                            }
+                        </ul>
+                    }
+
+                    <!-- Assessments Section -->
+                    @if (course.Assessments?.Any() == true)
+                    {
+                        <h6 class="text-primary mt-4"><i class="fas fa-check-square me-1"></i>Assessments</h6>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var a in course.Assessments)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@a.Type</strong> - @a.AssessmentMethod
+                                    @if (a.Duration != null)
+                                    {
+                                        <span>(@a.Duration h)</span>
+                                    }
+                                    <br />
+                                    <small>
+                                        Group: @a.GroupBased | Project: @a.ProjectRequired | Presentation: @a.PresentationRequired
+                                    </small>
+                                </li>
+                            }
+                        </ul>
+                    }
+
+                    <!-- Teaching Methods Section -->
+                    @if (course.TeachingMethods?.Any() == true)
+                    {
+                        <h6 class="text-primary mt-4"><i class="fas fa-chalkboard-teacher me-1"></i>Teaching Methods</h6>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var tm in course.TeachingMethods)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@tm.Method</strong>
+                                </li>
+                            }
+                        </ul>
+                    }
+
+                    <!-- Prerequisites Section -->
+                    @if (course.Prerequisites?.Any() == true)
+                    {
+                        <h6 class="text-primary mt-4"><i class="fas fa-book me-1"></i>Prerequisites</h6>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var p in course.Prerequisites)
+                            {
+                                <li class="list-group-item"><strong>@p.Requirement:</strong> @p.Description</li>
+                            }
+                        </ul>
+                    }
+
+                    <!-- Syllabus Section -->
+                    @if (course.Syllabus?.Any() == true)
+                    {
+                        <h6 class="text-primary mt-4"><i class="fas fa-list-ul me-1"></i>Syllabus</h6>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var s in course.Syllabus)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@s.Topic</strong> (@s.Hours h)
+                                    <br />
+                                    <small>Core: @s.CoreResources | Additional: @s.AdditionalResources</small>
+                                </li>
+                            }
+                        </ul>
+                    }
+
+                    <!-- References Section -->
+                    @if (course.References?.Any() == true)
+                    {
+                        <h6 class="text-primary mt-4"><i class="fas fa-bookmark me-1"></i>References</h6>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var r in course.References)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@r.Title</strong> by @r.Author (@r.Year)
+                                    @if (!string.IsNullOrEmpty(r.ISBN))
+                                    {
+                                        <br />
+                                        <small>ISBN: @r.ISBN</small>
+                                    }
+                                    @if (!string.IsNullOrEmpty(r.URL))
+                                    {
+                                        <br />
+                                        <small><a href="@r.URL" target="_blank">Link</a></small>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div> <!-- End of Scrollable Content Section -->
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public int CourseId { get; set; }
+
+    private Course course;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Fetch the course details based on the course ID
+            course = await DbContext.Courses
+                .Include(c => c.LearningOutcomes)
+                .Include(c => c.Assessments)
+                .Include(c => c.TeachingMethods)
+                .Include(c => c.Prerequisites)
+                .Include(c => c.Syllabus)
+                .Include(c => c.References)
+                .FirstOrDefaultAsync(c => c.Id == CourseId);
+
+            // Check if course was found
+            if (course == null)
+            {
+                // Handle course not found case
+                // You can show a message here or redirect the user to another page
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log the exception or handle error
+            Console.WriteLine($"Error loading course details: {ex.Message}");
+        }
+    }
+
+    private void NavigateBack()
+    {
+        Navigation.NavigateTo("/courses");
+    }
+}

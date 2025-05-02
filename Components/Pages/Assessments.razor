@@ -1,0 +1,50 @@
+﻿@page "/assessments"
+@using Microsoft.EntityFrameworkCore
+@using UFAR.PDFSync.DAO
+@inject ApplicationDbContext DbContext
+
+<h3>Assessments</h3>
+
+@if (assessments == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Assessment Method</th>
+                <th>Duration</th>
+                <th>Group Based</th>
+                <th>Project Required</th>
+                <th>Presentation Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assessment in assessments)
+            {
+                <tr>
+                    <td>@assessment.Type</td>
+                    <td>@assessment.AssessmentMethod</td>
+                    <td>@assessment.Duration</td>
+                    <td>@assessment.GroupBased</td>
+                    <td>@assessment.ProjectRequired</td>
+                    <td>@assessment.PresentationRequired</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Assessment> assessments;
+
+    // Fetch data directly from ApplicationDbContext
+    protected override async Task OnInitializedAsync()
+    {
+        assessments = await DbContext.Assessments.ToListAsync();
+    }
+}
+

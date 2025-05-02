@@ -1,0 +1,316 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url('/images/background.jpg');
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the background doesn't repeat */
+    color: #333; /* Adjust text color for visibility */
+    font-family: Arial, sans-serif; /* Adjust font style */
+}
+
+main {
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+/* Button Styles */
+a, .btn-link {
+    color: #006bb7;
+}
+
+.btn-primary {
+    background-color: #1b6ec2;
+    border-color: #145a96;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #145a96;
+        transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+        background-color: #0f4370;
+        transform: translateY(0);
+    }
+
+/* Focused Button Styles */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Content Padding */
+.content {
+    padding-top: 1.1rem;
+}
+
+/* Validation and Error Styles */
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #e50000;
+}
+
+/* Topbar Styles */
+.topbar {
+    background-color: rgba(37, 112, 149, 0.1); /* RGBA format for transparency */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center title */
+    padding: 2rem;
+    position: relative;
+    height: 150px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    position: relative;
+    padding: 10px;
+}
+
+/* Sidebar */
+.sidebar-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.sidebar-button {
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .sidebar-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .sidebar-button:focus {
+        outline: none;
+        border: 2px solid #fff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+/* Navigation Styles */
+nav {
+    background-color: rgba(0, 98, 168, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-link:hover {
+    background-color: #145a96;
+}
+
+/* Make the background image cover the entire page */
+.full-background {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center center; /* Center the background */
+    background-attachment: fixed; /* Keeps the background fixed as you scroll */
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
+/* Page Background */
+.page-background {
+    background-image: url('images/background.jpg');
+    background-size: cover; /* Ensure the background covers the page */
+    background-position: center; /* Center the image */
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes loading-bar {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-loading-bar {
+    animation: loading-bar 2s infinite;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+@keyframes loading-bar {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-loading-bar {
+    animation: loading-bar 1.5s infinite linear;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+}
+
+
+/* Error Boundary */
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,...long code...) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+    .blazor-error-boundary::after {
+        content: "An error has occurred.";
+    }
+
+/* Custom Checkbox Styles */
+.darker-border-checkbox.form-check-input {
+    border-color: #929292;
+}
+
+
+
+.upload-card-split {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.upload-left, .upload-right {
+    flex: 1 1 400px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+    .upload-left h2,
+    .upload-right h3 {
+        margin-bottom: 1rem;
+    }
+
+.success-message {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.status-message {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
