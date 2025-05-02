@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Znj4Pno2Zz/IKAY77TXh4APddDZ6CTjJhYWVVx+hIwc=",
+  "Hash": "sAg5CqYkio7JJyY5QTMoeXO5EnOfWl44WtexhtwyyJs=",
   "Source": "UFAR.UI",
   "BasePath": "_content/UFAR.UI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.PDFSync\\UFAR.PDFSync.csproj",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.PDFSync\\UFAR.PDFSync.csproj",
       "Version": 2,
       "Source": "UFAR.PDFSync",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,17 +22,17 @@
     {
       "Name": "UFAR.UI\\wwwroot",
       "Source": "UFAR.UI",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css",
       "SourceId": "UFAR.UI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "UFAR.UI#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -47,13 +47,13 @@
       "Integrity": "Y4sbHLdjkMi56bWsZvqHi4dLGN3eBEZa74tROacfc5s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css"
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css",
       "SourceId": "UFAR.UI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "UFAR.UI#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -68,13 +68,13 @@
       "Integrity": "Y4sbHLdjkMi56bWsZvqHi4dLGN3eBEZa74tROacfc5s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\app.css",
       "SourceId": "UFAR.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "app#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -92,10 +92,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "UFAR.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "bootstrap/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -113,10 +113,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "UFAR.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -134,10 +134,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\favicon.png",
       "SourceId": "UFAR.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "favicon#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -155,10 +155,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\images\\background.jpg",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\images\\background.jpg",
       "SourceId": "UFAR.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "images/background#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -176,10 +176,10 @@
       "OriginalItemSpec": "wwwroot\\images\\background.jpg"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\images\\logo.png",
       "SourceId": "UFAR.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\",
       "BasePath": "_content/UFAR.UI",
       "RelativePath": "images/logo#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -200,7 +200,7 @@
   "Endpoints": [
     {
       "Route": "app.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\app.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -237,7 +237,7 @@
     },
     {
       "Route": "app.o425u5tste.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\app.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -282,7 +282,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -327,7 +327,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -364,7 +364,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css.9ymoysplns.map",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -409,7 +409,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -446,7 +446,7 @@
     },
     {
       "Route": "favicon.ifv42okdf2.png",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -491,7 +491,7 @@
     },
     {
       "Route": "favicon.png",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -528,7 +528,7 @@
     },
     {
       "Route": "images/background.jpg",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\images\\background.jpg",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\images\\background.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -565,7 +565,7 @@
     },
     {
       "Route": "images/background.l2io7qy9hx.jpg",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\images\\background.jpg",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\images\\background.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -610,7 +610,7 @@
     },
     {
       "Route": "images/logo.png",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\images\\logo.png",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\images\\logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -647,7 +647,7 @@
     },
     {
       "Route": "images/logo.uo5x8kmnz7.png",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\wwwroot\\images\\logo.png",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\wwwroot\\images\\logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -692,7 +692,7 @@
     },
     {
       "Route": "UFAR.UI.133whrym9u.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -737,7 +737,7 @@
     },
     {
       "Route": "UFAR.UI.133whrym9u.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -782,7 +782,7 @@
     },
     {
       "Route": "UFAR.UI.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UFAR.UI.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -819,7 +819,7 @@
     },
     {
       "Route": "UFAR.UI.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\New folder\\UFAR.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UFAR.UI.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {

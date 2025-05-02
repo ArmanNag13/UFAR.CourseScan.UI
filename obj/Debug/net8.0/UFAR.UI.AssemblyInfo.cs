@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UFAR.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7015c3b259ce051c234bff2271fadbcc8104e15")]
 [assembly: System.Reflection.AssemblyProductAttribute("UFAR.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UFAR.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

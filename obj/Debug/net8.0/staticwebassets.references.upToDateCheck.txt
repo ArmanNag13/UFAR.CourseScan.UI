@@ -205,3 +205,4 @@ C:\Users\User\source\repos\UFAR.PDFSync\obj\Debug\net8.0\staticwebassets.build.j
 C:\Users\User\source\repos\UFAR.PDFSync\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\User\source\repos\UFAR.PDFSync\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\User\source\repos\UFAR.PDFSync\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\User\Desktop\New folder\UFAR.PDFSync\obj\Debug\net8.0\staticwebassets.build.json
